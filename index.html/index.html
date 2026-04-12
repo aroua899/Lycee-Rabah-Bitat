@@ -14,18 +14,15 @@
 
         body { font-family: 'Cairo', sans-serif; margin: 0; background-color: var(--bg-light); color: var(--text); scroll-behavior: smooth; line-height: 1.8; }
 
-        /* --- أنيميشن التمرير --- */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- التنقل العلوي --- */
         nav { background: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
         nav ul li { margin: 0 12px; }
         nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.85em; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* --- واجهة الترحيب --- */
         header { 
             background: linear-gradient(135deg, var(--primary), #2c3e50);
             color: white; text-align: center; padding: 130px 20px; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
@@ -37,7 +34,6 @@
         .title-box { text-align: center; margin-bottom: 60px; }
         .title-box h2 { font-family: 'Amiri', serif; font-size: 3.2em; color: var(--primary); border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 15px; }
 
-        /* --- البطاقات الفخمة --- */
         .card-long { background: white; padding: 45px; border-radius: 20px; border-right: 10px solid var(--accent); box-shadow: 0 15px 45px rgba(0,0,0,0.06); margin-bottom: 40px; transition: 0.4s; }
         .card-long:hover { transform: scale(1.02); }
         .description-text { font-family: 'Amiri', serif; font-size: 1.5em; text-align: justify; color: #333; }
@@ -47,22 +43,18 @@
         .box-item:hover { border-color: var(--secondary); transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .box-item h3 { color: var(--primary); margin-top: 0; border-right: 4px solid var(--accent); padding-right: 10px; }
 
-        /* --- أزرار الروابط الخارجية --- */
         .links-wrapper { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; }
         .ext-btn { text-decoration: none; color: white; padding: 18px 45px; border-radius: 50px; font-weight: 900; font-size: 1.1em; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; }
         .btn-fb { background: var(--fb-blue); }
         .btn-portal { background: var(--portal-orange); }
         .ext-btn:hover { transform: translateY(-5px); filter: brightness(1.1); }
 
-        /* --- صندوق الشكاوى --- */
         .form-container { background: #fcfcfc; padding: 50px; border-radius: 25px; border: 2px dashed #ddd; }
         input, textarea, select { width: 100%; padding: 18px; margin-bottom: 25px; border: 1px solid #ccc; border-radius: 12px; font-family: 'Cairo'; background: #fff; }
         .btn-submit { width: 100%; padding: 20px; border: none; border-radius: 60px; color: white; font-weight: bold; font-size: 1.3em; cursor: pointer; transition: 0.3s; }
 
         footer { background: var(--primary); color: white; padding: 80px 10% 40px; text-align: center; clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
         .location-badge { color: var(--accent); font-weight: bold; font-size: 1.2em; margin-bottom: 20px; }
-
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
@@ -71,7 +63,7 @@
         <ul>
             <li><a href="#about">التعريف والموقع</a></li>
             <li><a href="#admin">الطاقم الإداري</a></li>
-            <li><a href="#teachers">الطاقم التربوي</a></li>
+            <li><a href="#streams">شعبُ الثانوية</a></li>
             <li><a href="#facilities">المرافق والجمال</a></li>
             <li><a href="#rules">ميثاق الانضباط</a></li>
             <li><a href="#events">نبض الفعاليات</a></li>
@@ -95,7 +87,7 @@
         </div>
         <div class="card-long">
             <p class="description-text">
-                تتوسط <strong>ثانوية الشهيد رابح بيطاط</strong> مدينة أولاد يعيش الجميلة، كمنارةٍ علميةٍ شامخةٍ تستمدُّ عراقتها من اسمِ بطلٍ تاريخي، وجمالها من سحرِ ولايةِ البليدة. إن موقعها الاستراتيجي في قلبِ النسيجِ العمراني لنهج الشهداء يجعلها قبلةً لكل طالبِ علمٍ يسعى للتميز. هنا، حيث يلتقي هدوءُ الطبيعةِ البليديةِ بحيويةِ العقلِ المبدع، ننسجُ خيوطَ المستقبلِ لجيلٍ يفتخرُ بانتمائهِ لهذا الصرحِ العظيم.
+                تتوسط <strong>ثانوية الشهيد رابح بيطاط</strong> مدينة أولاد يعيش الجميلة، كمنارةٍ علميةٍ شامخةٍ تستمدُّ عراقتها من اسمِ بطلٍ تاريخي، وجمالها من سحرِ ولايةِ البليدة. إن موقعها الاستراتيجي في قلبِ النسيجِ العمراني لنهج الشهداء يجعلها قبلةً لكل طالبِ علمٍ يسعى للتميز. هنا، حيث يلتقي هدوءُ الطبيعةِ البليديةِ بحيويةِ العقلِ المبدع، ننسجُ خيوطَ المستقبلِ لجيلٍ يفتخرُ بانتمائهِ لهذا الصرحِ العظيم.
             </p>
             <div class="location-badge">📍 الموقع: حي نهج الشهداء، بلدية أولاد يعيش، ولاية البليدة - الجزائر.</div>
         </div>
@@ -107,22 +99,25 @@
         </div>
         <div class="grid-container">
             <div class="box-item"><h3>السيد المدير</h3><p>الربّان الحكيم الذي يقود المؤسسة نحو آفاق النجاح برؤية تربوية معاصرة.</p></div>
-            <div class="box-item"><h3>السيد الناظر</h3><p>منظمُ الشؤون البيداغوجية، الساهر على تناغم الجداول وحسن سير الدروس.</p></div>
+            <div class="box-item"><h3>السيدة الناظرة</h3><p>منظمةُ الشؤون البيداغوجية، الساهرة على تناغم الجداول وحسن سير الدروس.</p></div>
             <div class="box-item"><h3>المسير المالي (المقتصد)</h3><p>أمينُ الموارد، الذي يضمن تدفق الإمكانيات لتوفير بيئة تعليمية مثالية.</p></div>
-            <div class="box-item"><h3>مستشار التربية</h3><p>الحارسُ الأمين على قيم الانضباط، يوجهُ بقلبٍ أبوي وعقلٍ تربوي رصين.</p></div>
-            <div class="box-item"><h3>مستشار التوجيه</h3><p>المرشدُ النفسي الذي ينير عقول التلاميذ لاختيارِ تخصصاتهم ومستقبلهم.</p></div>
+            <div class="box-item"><h3>مستشارة التربية</h3><p>الحارسةُ الأمينة على قيم الانضباط، توجهُ بقلبٍ أموي وعقلٍ تربوي رصين.</p></div>
+            <div class="box-item"><h3>مستشارة التوجيه</h3><p>المرشدةُ النفسية التي تنير عقول التلاميذ لاختيارِ تخصصاتهم ومستقبلهم.</p></div>
             <div class="box-item"><h3>الأمانة الإدارية</h3><p>خزانُ المعلوماتِ والتوثيق، المحركُ الإداري الذي يربط خيوط المؤسسة.</p></div>
         </div>
     </section>
 
-    <section id="teachers" class="content-section reveal">
+    <section id="streams" class="content-section reveal">
         <div class="title-box">
-            <h2>فرسانُ العلم (الطاقم التربوي)</h2>
+            <h2>شعبُ التميز والآفاق</h2>
         </div>
-        <div class="card-long" style="border-right-color: var(--secondary);">
-            <p class="description-text">
-                أساتذتنا هم فخرُ هذه الثانوية، كوكبةٌ من المربين الذين نذروا أنفسهم لرسالةِ الأنبياء. بفيضِ معرفتهم وصبرهم الجميل، يحولون الصعابَ إلى مهارات، والغموضَ إلى يقين. هم ليسوا ملقنين للدروس، بل هم ملهمون يبنون الشخصية، ويصقلون الفكر، ويغرسون في نفوسِ التلاميذِ حبَّ البحثِ والاستقصاء في شتى العلومِ والفنون.
-            </p>
+        <div class="grid-container">
+            <div class="box-item" style="border-right: 5px solid var(--secondary);"><h3>آداب وفلسفة</h3><p>لرواد الفكر والتحليل، حيث تُبنى القدرة على النقد وفهم تاريخ الإنسانية.</p></div>
+            <div class="box-item" style="border-right: 5px solid var(--secondary);"><h3>لغات أجنبية</h3><p>جسر التواصل مع العالم، لتمكين التلاميذ من لغات حية تفتح لهم آفاقاً دولية.</p></div>
+            <div class="box-item" style="border-right: 5px solid var(--portal-orange);"><h3>علوم تجريبية</h3><p>ميدان البحث والاستكشاف، لجيل المستقبل في الطب، البيولوجيا والكيمياء.</p></div>
+            <div class="box-item" style="border-right: 5px solid var(--portal-orange);"><h3>رياضيات</h3><p>نخبة التفكير المنطقي، للطلاب الشغوفين بلغة الأرقام والتجريد الرياضي.</p></div>
+            <div class="box-item" style="border-right: 5px solid #3498db;"><h3>تقني رياضي</h3><p>مركز الابتكار التكنولوجي، حيث تلتقي الهندسة بالتطبيق العملي والمشاريع.</p></div>
+            <div class="box-item" style="border-right: 5px solid #3498db;"><h3>تسيير واقتصاد</h3><p>لصناع القرار المالي، وفهم آليات السوق وإدارة المؤسسات الحديثة.</p></div>
         </div>
     </section>
 
@@ -135,8 +130,8 @@
             <div class="box-item"><h3>المخابر العلمية</h3><p>محرابُ التجربة، حيث تتحول النظريات إلى واقعٍ ملموسٍ تحت مهارةِ تلامذتنا.</p></div>
             <div class="box-item"><h3>المطعم المدرسي</h3><p>واحةُ التغذيةِ المنظمة، حيث تُقدم الوجبات في أجواءٍ عائليةٍ تسودها الروح الجماعية.</p></div>
             <div class="box-item"><h3>ساحةُ الثانوية</h3><p>رئةُ المؤسسةِ الفسيحة، حيث تعلو تحيةُ العلمِ وتتلاقى ضحكاتُ التلاميذ في فترات الراحة.</p></div>
-            <div class="box-item"><h3>المكتبة والمطالعة</h3><p>كنزُ المعلوماتِ الهادئ، حيث يعتكفُ عشاقُ القراءةِ بين دفتي الكتبِ والمراجع.</p></div>
             <div class="box-item"><h3>الفضاء الرياضي</h3><p>ساحةُ التحدي والنشاط البدني، لغرسِ قيم الروح الرياضية والجسم السليم.</p></div>
+            <div class="box-item"><h3>مساحات خضراء</h3><p>حدائق منسقة تعكس جمال البليدة وتوفر جواً من الراحة النفسية للمتمدرسين.</p></div>
         </div>
     </section>
 
@@ -148,8 +143,8 @@
             <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>الحضور والتبكير</h3><p>الوقتُ أمانة؛ لذا نلتزم بالحضور قبل رفع العلم في تمام الساعة 07:45 صباحاً.</p></div>
             <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>المئزرُ الواجب</h3><p>هويةُ التلميذ المنضبط تبدأ من مئزره النظيف والموحد، رمزاً للمساواة والوقار.</p></div>
             <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>تبرير الغياب</h3><p>المسؤولية تتطلب إحضار الولي وتبرير أي انقطاع لضمان التواصل المستمر.</p></div>
-            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>سكينةُ الأروقة</h3><p>الهدوء في الممرات أثناء الحصص هو حقُّ زميلك في التركيز، وواجبك في الاحترام.</p></div>
-            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>نظامُ المطعم</h3><p>التزامُ الطابور والنظافة في المطعم يعكسُ رقيَّ أخلاقنا قبل جوعنا.</p></div>
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>سكينةُ الأروقة</h3><p>الهدوء في الممرات أثناء الحصص هو حقُّ زميلك في التركيز، وواجبك في الاحترام.</p></div>
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>نظامُ المطعم</h3><p>التزامُ الطابور والنظافة في المطعم يعكسُ رقيَّ أخلاقنا قبل جوعنا.</p></div>
             <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>الأمانةُ والممتلكات</h3><p>كل طاولة، كرسي، وجدار هو ملكٌ للأجيال القادمة؛ فلنحافظ عليها كما وجدناها.</p></div>
         </div>
     </section>
@@ -171,12 +166,12 @@
         </div>
         <div class="grid-container">
             <div class="form-container">
-                <h3 style="text-align: center;">👨‍🏫 فضاء هيئة التدريس</h3>
+                <h3 style="text-align: center;">👩‍🏫 فضاء هيئة التدريس</h3>
                 <form>
                     <input type="text" placeholder="الاسم الكامل للأستاذ(ة)" required>
                     <input type="email" placeholder="البريد الإلكتروني المهني" required>
                     <textarea rows="4" placeholder="اكتب اقتراحك أو انشغالك بوضوح..."></textarea>
-                    <button type="submit" class="btn-submit" style="background: var(--primary);" onclick="alert('تم استلام رسالتكم أستاذنا بكل احترام.')">إرسال كأستاذ</button>
+                    <button type="submit" class="btn-submit" style="background: var(--primary);" onclick="alert('تم استلام رسالتكم أستاذتنا بكل احترام.')">إرسال كأستاذ(ة)</button>
                 </form>
             </div>
             <div class="form-container">
@@ -184,7 +179,7 @@
                 <form>
                     <input type="text" placeholder="الاسم الكامل" required>
                     <input type="email" placeholder="بريدك الإلكتروني للتواصل" required>
-                    <select><option>تلميذ</option><option>ولي أمر</option></select>
+                    <select><option>تلميذ(ة)</option><option>ولي أمر</option></select>
                     <textarea rows="4" placeholder="نحن نصغي إليك.. اطرح ما يجول بخاطرك..."></textarea>
                     <button type="submit" class="btn-submit" style="background: var(--secondary);" onclick="alert('وصلت رسالتك، شكراً لمشاركتك في تطوير ثانويتنا!')">إرسال الرسالة</button>
                 </form>
