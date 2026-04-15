@@ -1,413 +1,545 @@
 <!DOCTYPE html>
+
 <html dir="rtl" lang="ar">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>البوابة الشاملة | ثانوية الشهيد رابح بيطاط</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
+
     <style>
+
         :root {
+
             --primary: #1c2e4a; --secondary: #27ae60; --accent: #d4af37;
+
             --bg-light: #fdfdfd; --text: #2c3e50; --fb-blue: #1877f2; --portal-orange: #e67e22;
+
         }
 
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            margin: 0; 
-            background-color: var(--bg-light); 
-            color: var(--text); 
-            scroll-behavior: smooth; 
-            line-height: 1.8; 
-            overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي أثناء الأنميشن */
-        }
 
-        /* تنسيق قسم التمرير (Scroll Reveal) لجعل العناصر تظهر بسلاسة */
-        .reveal { 
-            opacity: 0; 
-            transform: translateY(30px); 
-            transition: all 0.8s ease-out; 
-        }
-        .reveal.active { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
 
-        /* تنسيق شريط التنقل (Navigation) */
-        nav { 
-            background: var(--primary); 
-            padding: 10px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-            transition: background 0.3s ease; /* تأثير تغيير الخلفية عند التمرير */
-        }
-        nav.scrolled {
-            background: rgba(28, 46, 74, 0.95); /* خلفية شبه شفافة عند التمرير */
-        }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background-color: var(--bg-light); color: var(--text); scroll-behavior: smooth; line-height: 1.8; }
+
+
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+
+
+        nav { background: var(--primary); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
         nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; flex-wrap: wrap; }
-        nav ul li { margin: 0 10px; }
-        nav ul li a { 
-            color: #fff; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 0.85em; 
-            transition: 0.3s ease; 
-            position: relative; /* لإضافة خط سفلي متحرك */
-        }
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            right: 0;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
+
+        nav ul li { margin: 0 12px; }
+
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.85em; transition: 0.3s; }
+
         nav ul li a:hover { color: var(--accent); }
-        nav ul li a:hover::after { width: 100%; } /* تمدد الخط السفلي عند التحويم */
 
-        /* تنسيق الهيدر (Header) مع تأثير الجسيمات */
+
+
         header { 
+
             background: linear-gradient(135deg, var(--primary), #2c3e50);
-            color: white; 
-            text-align: center; 
-            padding: 150px 20px; 
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-            position: relative; /* مطلوب لوضع الجسيمات */
-            overflow: hidden;
-        }
-        /* تصميم الجسيمات (Particles) */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-        .header-content {
-            position: relative;
-            z-index: 2; /* لوضع المحتوى فوق الجسيمات */
-        }
-        header h1 { 
-            font-family: 'Amiri', serif; 
-            font-size: 5em; 
-            margin: 0; 
-            color: var(--accent); 
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3); 
-            animation: pulse 2s infinite; /* تأثير نبض خفيف */
-        }
-        header p { font-size: 1.8em; opacity: 0.9; margin-top: 15px; }
 
-        /* تنسيق أقسام المحتوى */
+            color: white; text-align: center; padding: 130px 20px; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+
+        }
+
+        header h1 { font-family: 'Amiri', serif; font-size: 4.8em; margin: 0; color: var(--accent); text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+
+        header p { font-size: 1.6em; opacity: 0.9; margin-top: 10px; }
+
+
+
         .content-section { padding: 90px 10%; border-bottom: 1px solid #f0f0f0; }
+
         .title-box { text-align: center; margin-bottom: 60px; }
-        .title-box h2 { 
-            font-family: 'Amiri', serif; 
-            font-size: 3.5em; 
-            color: var(--primary); 
-            border-bottom: 4px solid var(--accent); 
-            display: inline-block; 
-            padding-bottom: 15px; 
-            position: relative;
-        }
-        /* إضافة أيقونة متحركة بجانب العنوان */
-        .title-box h2::before {
-            content: '✨';
-            position: absolute;
-            right: -50px;
-            top: 10px;
-            font-size: 0.8em;
-            animation: float 3s ease-in-out infinite;
-        }
 
-        /* تنسيق البطاقات ذات التأثير الحركي عند التحويم */
-        .card-long { 
-            background: white; 
-            padding: 45px; 
-            border-radius: 20px; 
-            border-right: 10px solid var(--accent); 
-            box-shadow: 0 15px 45px rgba(0,0,0,0.06); 
-            margin-bottom: 40px; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-        .card-long:hover { 
-            transform: translateY(-10px) scale(1.02); /* ارتفاع وتكبير خفيف */
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1); 
-        }
-        .description-text { font-family: 'Amiri', serif; font-size: 1.6em; text-align: justify; color: #333; }
+        .title-box h2 { font-family: 'Amiri', serif; font-size: 3.2em; color: var(--primary); border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 15px; }
 
-        /* تنسيق شبكة العناصر مع أنميشن متسلسل */
+
+
+        .card-long { background: white; padding: 45px; border-radius: 20px; border-right: 10px solid var(--accent); box-shadow: 0 15px 45px rgba(0,0,0,0.06); margin-bottom: 40px; transition: 0.4s; }
+
+        .card-long:hover { transform: scale(1.02); }
+
+        .description-text { font-family: 'Amiri', serif; font-size: 1.5em; text-align: justify; color: #333; }
+
+
+
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .box-item { 
-            background: #fff; 
-            padding: 30px; 
-            border-radius: 15px; 
-            border: 1px solid #eee; 
-            transition: all 0.4s ease; 
-            position: relative; 
-            overflow: hidden; /* لتأثير الضوء عند التحويم */
-        }
-        .box-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-        }
-        .box-item:hover { 
-            border-color: var(--secondary); 
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-        }
-        .box-item:hover::after {
-            left: 100%; /* تأثير الضوء العابر */
-        }
+
+        .box-item { background: #fff; padding: 30px; border-radius: 15px; border: 1px solid #eee; transition: 0.4s; position: relative; }
+
+        .box-item:hover { border-color: var(--secondary); transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
         .box-item h3 { color: var(--primary); margin-top: 0; border-right: 4px solid var(--accent); padding-right: 10px; }
 
-        /* تنسيق الأزرار الخارجية مع أنميشن الجذب */
+
+
         .links-wrapper { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 50px; }
-        .ext-btn { 
-            text-decoration: none; 
-            color: white; 
-            padding: 18px 45px; 
-            border-radius: 50px; 
-            font-weight: 900; 
-            font-size: 1.1em; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            position: relative;
-            overflow: hidden;
-        }
-        .ext-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-        .ext-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
+
+        .ext-btn { text-decoration: none; color: white; padding: 18px 45px; border-radius: 50px; font-weight: 900; font-size: 1.1em; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; }
+
         .btn-fb { background: var(--fb-blue); }
+
         .btn-portal { background: var(--portal-orange); }
-        .ext-btn:hover { transform: scale(1.05); }
 
-        /* تنسيق نموذج التواصل */
-        .form-container { background: #fcfcfc; padding: 50px; border-radius: 25px; border: 2px dashed #ddd; transition: border-color 0.3s ease; }
-        .form-container:hover { border-color: var(--primary); }
-        input, textarea, select { 
-            width: 100%; 
-            padding: 18px; 
-            margin-bottom: 25px; 
-            border: 1px solid #ccc; 
-            border-radius: 12px; 
-            font-family: 'Cairo'; 
-            background: #fff; 
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(28, 46, 74, 0.1);
-        }
-        .btn-submit { 
-            width: 100%; 
-            padding: 20px; 
-            border: none; 
-            border-radius: 60px; 
-            color: white; 
-            font-weight: bold; 
-            font-size: 1.3em; 
-            cursor: pointer; 
-            transition: background 0.3s ease, transform 0.2s ease; 
-            background: var(--primary);
-        }
-        .btn-submit:hover {
-            background: #2c3e50;
-            transform: scale(1.03);
-        }
-        .btn-submit:active {
-            transform: scale(0.98);
-        }
+        .ext-btn:hover { transform: translateY(-5px); filter: brightness(1.1); }
 
-        /* تنسيق الفوتر (Footer) */
+
+
+        .form-container { background: #fcfcfc; padding: 50px; border-radius: 25px; border: 2px dashed #ddd; }
+
+        input, textarea, select { width: 100%; padding: 18px; margin-bottom: 25px; border: 1px solid #ccc; border-radius: 12px; font-family: 'Cairo'; background: #fff; }
+
+        .btn-submit { width: 100%; padding: 20px; border: none; border-radius: 60px; color: white; font-weight: bold; font-size: 1.3em; cursor: pointer; transition: 0.3s; }
+
+
+
         footer { background: var(--primary); color: white; padding: 80px 10% 40px; text-align: center; clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
-        .location-badge { color: var(--accent); font-weight: bold; font-size: 1.3em; margin-bottom: 20px; animation: flash 2s infinite; }
 
-        /* تعريف الأنميشن المخصص */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.9; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        @keyframes flash {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0.6; }
-        }
+        .location-badge { color: var(--accent); font-weight: bold; font-size: 1.2em; margin-bottom: 20px; }
 
-        /* تنسيق الاستجابة للشاشات الصغيرة */
-        @media (max-width: 768px) {
-            header h1 { font-size: 3em; }
-            header p { font-size: 1.4em; }
-            .title-box h2 { font-size: 2.5em; }
-            .title-box h2::before { display: none; } /* إخفاء الأيقونة العائمة على الموبايل */
-            .content-section { padding: 60px 5%; }
-        }
     </style>
+
 </head>
+
 <body>
 
-    <div id="particles-js"></div>
 
-    <nav id="main-nav">
+
+    <nav>
+
         <ul>
-            <li><a href="#about">التعريف</a></li>
-            <li><a href="#admin">الطاقم</a></li>
-            <li><a href="#streams">الشعب</a></li>
-            <li><a href="#facilities">المرافق</a></li>
-            <li><a href="#rules">الانضباط</a></li>
-            <li><a href="#events">الفعاليات</a></li>
-            <li><a href="#feedback">الشكاوى</a></li>
+
+            <li><a href="#about">التعريف والموقع</a></li>
+
+            <li><a href="#admin">الطاقم الإداري</a></li>
+
+            <li><a href="#streams">شعبُ الثانوية</a></li>
+
+            <li><a href="#facilities">المرافق والجمال</a></li>
+
+            <li><a href="#rules">ميثاق الانضباط</a></li>
+
+            <li><a href="#events">نبض الفعاليات</a></li>
+
+            <li><a href="#feedback">بوابة الشكاوى</a></li>
+
         </ul>
+
     </nav>
 
+
+
     <header>
-        <div class="header-content">
-            <h1 class="animate__animated animate__backInDown">ثانوية الشهيد رابح بيطاط</h1>
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">أولاد يعيش - البليدة: حيث يزهرُ العلمُ في مدينةِ الورود ✨</p>
-            
-            <div class="links-wrapper animate__animated animate__fadeInUp animate__delay-2s">
-                <a href="https://www.facebook.com/rabh.bytat.2025?locale=fr_FR" target="_blank" class="ext-btn btn-fb">
-                    تابعونا على فيسبوك
-                </a>
-                <a href="https://awlyaa.education.dz" target="_blank" class="ext-btn btn-portal">
-                    فضاء الأولياء الرقمي
-                </a>
-            </div>
+
+        <h1 class="animate__animated animate__zoomIn">ثانوية الشهيد رابح بيطاط</h1>
+
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">أولاد يعيش - البليدة: حيث يزهرُ العلمُ في مدينةِ الورود</p>
+
+        
+
+        <div class="links-wrapper animate__animated animate__fadeInUp animate__delay-1s">
+
+            <a href="https://www.facebook.com/rabh.bytat.2025?locale=fr_FR" target="_blank" class="ext-btn btn-fb">تابعونا على فيسبوك</a>
+
+            <a href="https://awlyaa.education.dz" target="_blank" class="ext-btn btn-portal">فضاء الأولياء الرقمي</a>
+
         </div>
+
     </header>
 
+
+
     <section id="about" class="content-section reveal">
+
         <div class="title-box">
+
             <h2>هويةُ الصرحِ وموقعهُ</h2>
+
         </div>
+
         <div class="card-long">
+
             <p class="description-text">
+
                 تتوسط <strong>ثانوية الشهيد رابح بيطاط</strong> مدينة أولاد يعيش الجميلة، كمنارةٍ علميةٍ شامخةٍ تستمدُّ عراقتها من اسمِ بطلٍ تاريخي، وجمالها من سحرِ ولايةِ البليدة. إن موقعها الاستراتيجي في قلبِ النسيجِ العمراني يجعلها قبلةً لكل طالبِ علمٍ يسعى للتميز. هنا، حيث يلتقي هدوءُ الطبيعةِ البليديةِ بحيويةِ العقلِ المبدع، ننسجُ خيوطَ المستقبلِ لجيلٍ يفتخرُ بانتمائهِ لهذا الصرحِ العظيم.
+
             </p>
+
             <div class="location-badge">📍 الموقع: بلدية أولاد يعيش، ولاية البليدة - الجزائر.</div>
+
         </div>
+
     </section>
+
+
 
     <section id="admin" class="content-section reveal">
-        <div class="title-box"><h2>قيادةُ التميز (الطاقم الإداري)</h2></div>
-        <div class="grid-container">
-            <div class="box-item"><h3>السيد المدير</h3><p>الربّان الحكيم الذي يقود المؤسسة نحو آفاق النجاح.</p></div>
-            <div class="box-item"><h3>السيدة الناظرة</h3><p>منظمةُ الشؤون البيداغوجية، الساهرة على حسن سير الدروس.</p></div>
-            <div class="box-item"><h3>المسير المالي</h3><p>أمينُ الموارد لضمان بيئة تعليمية مثالية.</p></div>
+
+        <div class="title-box">
+
+            <h2>قيادةُ التميز (الطاقم الإداري)</h2>
+
         </div>
+
+        <div class="grid-container">
+
+            <div class="box-item"><h3>السيد المدير</h3><p>الربّان الحكيم الذي يقود المؤسسة نحو آفاق النجاح برؤية تربوية معاصرة.</p></div>
+
+            <div class="box-item"><h3>السيدة الناظرة</h3><p>منظمةُ الشؤون البيداغوجية، الساهرة على تناغم الجداول وحسن سير الدروس.</p></div>
+
+            <div class="box-item"><h3>المسير المالي (المقتصد)</h3><p>أمينُ الموارد، الذي يضمن تدفق الإمكانيات لتوفير بيئة تعليمية مثالية.</p></div>
+
+            <div class="box-item"><h3>مستشارة التربية</h3><p>الحارسةُ الأمينة على قيم الانضباط، توجهُ بقلبٍ أموي وعقلٍ تربوي رصين.</p></div>
+
+            <div class="box-item"><h3>مستشارة التوجيه</h3><p>المرشدةُ النفسية التي تنير عقول التلاميذ لاختيارِ تخصصاتهم ومستقبلهم.</p></div>
+
+            <div class="box-item"><h3>الأمانة الإدارية</h3><p>خزانُ المعلوماتِ والتوثيق، المحركُ الإداري الذي يربط خيوط المؤسسة.</p></div>
+
+        </div>
+
     </section>
 
-    <section id="feedback" class="content-section reveal">
-        <div class="title-box"><h2>بوابة التواصل والشكاوى</h2></div>
-        <div class="grid-container">
-            <div class="form-container">
-                <h3 style="text-align: center;">👩‍🏫 فضاء الأساتذة</h3>
-                <form action="https://formspree.io/f/mqakpjne" method="POST">
-                    <input type="text" name="name" placeholder="الاسم الكامل للأستاذ(ة)" required>
-                    <input type="email" name="email" placeholder="البريد الإلكتروني المهني" required>
-                    <textarea name="message" rows="4" placeholder="اكتب اقتراحك أو انشغالك بوضوح..."></textarea>
-                    <button type="submit" class="btn-submit">إرسال كأستاذ(ة)</button>
-                </form>
-            </div>
-            <div class="form-container">
-                <h3 style="text-align: center;">👨‍🎓 فضاء التلاميذ والأولياء</h3>
-                <form action="https://formspree.io/f/mqakpjne" method="POST">
-                    <input type="text" name="name" placeholder="الاسم الكامل" required>
-                    <input type="email" name="email" placeholder="بريدك الإلكتروني للتواصل" required>
-                    <textarea name="message" rows="4" placeholder="نحن نصغي إليك.. اطرح ما يجول بخاطرك..."></textarea>
-                    <button type="submit" class="btn-submit" style="background: var(--secondary);">إرسال الرسالة</button>
-                </form>
-            </div>
+
+
+   <section id="streams" class="content-section reveal">
+
+        <div class="title-box">
+
+            <h2>اكتشفْ مسارَك التعليمي</h2>
+
+            <p style="text-align: center; font-size: 1.2em; color: #666;">تعرف على المواد الأساسية التي ستصنعُ مستقبلك</p>
+
         </div>
+
+        
+
+        <div class="grid-container">
+
+            <div class="box-item" style="border-top: 6px solid #9b59b6;">
+
+                <h3 style="color: #9b59b6;">📚 آداب وفلسفة</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>اللغة العربية</li>
+
+                    <li>الفلسفة</li>
+
+                    <li>التاريخ والجغرافيا</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"لعشاق الحكمة والبيان الأدبي."</p>
+
+            </div>
+
+            
+
+            <div class="box-item" style="border-top: 6px solid #3498db;">
+
+                <h3 style="color: #3498db;">🌍 لغات أجنبية</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>اللغة العربية</li>
+
+                    <li>اللغة الإنجليزية</li>
+
+                    <li>اللغة الفرنسية</li>
+
+                    <li>اللغة الإسبانية</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"جسر التواصل مع العالم الخارجي."</p>
+
+            </div>
+
+            
+
+            <div class="box-item" style="border-top: 6px solid #27ae60;">
+
+                <h3 style="color: #27ae60;">🧪 علوم تجريبية</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>العلوم الطبيعية</li>
+
+                    <li>الفيزياء</li>
+
+                    <li>الرياضيات</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"للباحثين عن أسرار الكون والحياة."</p>
+
+            </div>
+
+            
+
+            <div class="box-item" style="border-top: 6px solid #e67e22;">
+
+                <h3 style="color: #e67e22;">📐 رياضيات</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>الرياضيات</li>
+
+                    <li>العلوم الفيزيائية</li>
+
+                    <li>العلوم الطبيعية</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"نخبة التفكير المنطقي الذكي."</p>
+
+            </div>
+
+
+
+            <div class="box-item" style="border-top: 6px solid #e74c3c;">
+
+                <h3 style="color: #e74c3c;">⚙️ تقني رياضي</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>الهندسة (ميكانيكية، مدنية، كهربائية)</li>
+
+                    <li>الرياضيات</li>
+
+                    <li>العلوم الفيزيائية</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"صناع التكنولوجيا ومهندسو الغد."</p>
+
+            </div>
+
+
+
+            <div class="box-item" style="border-top: 6px solid #f1c40f;">
+
+                <h3 style="color: #d4ac0d;">💼 تسيير واقتصاد</h3>
+
+                <p><strong>المواد الأساسية:</strong></p>
+
+                <ul style="padding-right: 20px; color: #444;">
+
+                    <li>المحاسبة</li>
+
+                    <li>التاريخ والجغرافيا</li>
+
+                    <li>الرياضيات</li>
+
+                    <li>الاقتصاد</li>
+
+                </ul>
+
+                <p style="font-size: 0.9em; font-style: italic;">"لرواد الأعمال وقادة الاقتصاد."</p>
+
+            </div>
+
+        </div>
+
     </section>
+
+
+
+    <section id="facilities" class="content-section reveal">
+
+        <div class="title-box">
+
+            <h2>أروقةُ المعرفة ومرافقُ الراحة</h2>
+
+        </div>
+
+        <div class="grid-container">
+
+            <div class="box-item"><h3>القاعات الدراسية</h3><p>فضاءاتٌ واسعة، تنبض بالحياةِ والنشاط، صُممت لتكون حاضنةً للأفكارِ والتعاون.</p></div>
+
+            <div class="box-item"><h3>المخابر العلمية</h3><p>محرابُ التجربة، حيث تتحول النظريات إلى واقعٍ ملموسٍ تحت مهارةِ تلامذتنا.</p></div>
+
+            <div class="box-item"><h3>المطعم المدرسي</h3><p>واحةُ التغذيةِ المنظمة، حيث تُقدم الوجبات في أجواءٍ عائليةٍ تسودها الروح الجماعية.</p></div>
+
+            <div class="box-item"><h3>ساحةُ الثانوية</h3><p>رئةُ المؤسسةِ الفسيحة، حيث تعلو تحيةُ العلمِ وتتلاقى ضحكاتُ التلاميذ في فترات الراحة.</p></div>
+
+            <div class="box-item"><h3>الفضاء الرياضي</h3><p>ساحةُ التحدي والنشاط البدني، لغرسِ قيم الروح الرياضية والجسم السليم.</p></div>
+
+            <div class="box-item"><h3>مساحات خضراء</h3><p>حدائق منسقة تعكس جمال البليدة وتوفر جواً من الراحة النفسية للمتمدرسين.</p></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="rules" class="content-section reveal">
+
+        <div class="title-box">
+
+            <h2>ميثاقُ الانضباطِ والوفاء</h2>
+
+        </div>
+
+        <div class="grid-container">
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>الحضور والتبكير</h3><p>الوقتُ أمانة؛ لذا نلتزم بالحضور قبل رفع العلم في تمام الساعة 07:45 صباحاً.</p></div>
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>المئزرُ الواجب</h3><p>هويةُ التلميذ المنضبط تبدأ من مئزره النظيف والموحد، رمزاً للمساواة والوقار.</p></div>
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>تبرير الغياب</h3><p>المسؤولية تتطلب إحضار الولي وتبرير أي انقطاع لضمان التواصل المستمر.</p></div>
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>سكينةُ الأروقة</h3><p>الهدوء في الممرات أثناء الحصص هو حقُّ زميلك في التركيز، وواجبك في الاحترام.</p></div>
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>نظامُ المطعم</h3><p>التزامُ الطابور والنظافة في المطعم يعكسُ رقيَّ أخلاقنا قبل جوعنا.</p></div>
+
+            <div class="box-item" style="border-right: 5px solid #e74c3c;"><h3>الأمانةُ والممتلكات</h3><p>كل طاولة، كرسي، وجدار هو ملكٌ للأجيال القادمة؛ فلنحافظ عليها كما وجدناها.</p></div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="events" class="content-section reveal">
+
+        <div class="title-box">
+
+            <h2>نبضُ النشاطِ والإبداع</h2>
+
+        </div>
+
+        <div class="card-long" style="border-right-color: #f39c12;">
+
+            <p class="description-text">
+
+                الحياةُ في رابح بيطاط ليست دروساً جافة فحسب، بل هي مهرجانٌ دائمٌ للنشاط. من المسابقاتِ العلميةِ المثيرة إلى الاحتفالاتِ الوطنيةِ المخلدة، ومن أيامِ التشجيرِ التي تكسو ساحتنا خضرةً إلى تكريماتِ النخبِ المتفوقة. نحن نصنعُ ذكرياتٍ لا تُنسى، ونبني مهاراتٍ تتجاوز أسوارَ الأقسام، لنجعل من الثانويةِ مجتمعاً متكاملاً ينبضُ بالإبداع.
+
+            </p>
+
+        </div>
+
+    </section>
+
+<section id="feedback" class="content-section reveal">
+
+    <div class="title-box">
+
+        <h2>بوابةُ التواصلِ المباشر</h2>
+
+    </div>
+
+    <div class="grid-container">
+
+        <div class="form-container">
+
+            <h3 style="text-align: center;">👩‍🏫 فضاء هيئة التدريس</h3>
+
+            <form action="https://formspree.io/f/mqakpjne" method="POST">
+
+                <input type="text" name="name" placeholder="الاسم الكامل للأستاذ(ة)" required>
+
+                <input type="email" name="email" placeholder="البريد الإلكتروني المهني" required>
+
+                <textarea name="message" rows="4" placeholder="اكتب اقتراحك أو انشغالك بوضوح..."></textarea>
+
+                <button type="submit" class="btn-submit" style="background: var(--primary);">إرسال كأستاذ(ة)</button>
+
+            </form>
+
+        </div>
+
+        <div class="form-container">
+
+            <h3 style="text-align: center;">👨‍🎓 فضاء التلاميذ والأولياء</h3>
+
+            <form action="https://formspree.io/f/mqakpjne" method="POST">
+
+                <input type="text" name="name" placeholder="الاسم الكامل" required>
+
+                <input type="email" name="email" placeholder="بريدك الإلكتروني للتواصل" required>
+
+                <select name="type"><option>تلميذ(ة)</option><option>ولي أمر</option></select>
+
+                <textarea name="message" rows="4" placeholder="نحن نصغي إليك.. اطرح ما يجول بخاطرك..."></textarea>
+
+                <button type="submit" class="btn-submit" style="background: var(--secondary);">إرسال الرسالة</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <footer>
-        <p style="font-size: 1.2em; color: var(--accent); font-weight: 900; margin-bottom: 10px;">بأقلامِ ورؤيةِ الطالبة: أروى بولغبار</p>
-        <p>&copy; جميع الحقوق محفوظة لعام 2026 - صُنع بحب لأجل العلم 💻</p>
+
+        <div class="location-badge" style="color: white; font-size: 1.5em;">ثانوية الشهيد رابح بيطاط | البليدة</div>
+
+        <p style="font-size: 1.4em; color: var(--accent); font-weight: 900; margin-bottom: 20px;">بأقلامِ ورؤيةِ الطالبة: أروى بولغبار</p>
+
+        <p>&copy; جميع الحقوق محفوظة لعام 2026 - صُنع بحب لأجل العلم</p>
+
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <script>
-        // إعداد تأثير الجسيمات (Particles)
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#d4af37' }, // لون ذهبي متناسق مع التيمة
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: false },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#d4af37', opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
-            },
-            retina_detect: true
-        });
 
-        // تأثيرات عند التمرير (Scroll Effects)
+
+    <script>
+
         function reveal() {
+
             var reveals = document.querySelectorAll(".reveal");
+
             for (var i = 0; i < reveals.length; i++) {
+
                 var windowHeight = window.innerHeight;
+
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; // المسافة قبل ظهور العنصر
-                
-                if (elementTop < windowHeight - elementVisible) {
+
+                if (elementTop < windowHeight - 100) {
+
                     reveals[i].classList.add("active");
+
                 }
+
             }
+
         }
 
-        // تأثير تغيير شريط التنقل عند التمرير
-        window.addEventListener("scroll", function() {
-            var nav = document.getElementById("main-nav");
-            if (window.scrollY > 50) {
-                nav.classList.add("scrolled");
-            } else {
-                nav.classList.remove("scrolled");
-            }
-            reveal(); // استدعاء دالة الظهور عند التمرير
-        });
+        window.addEventListener("scroll", reveal);
 
-        // استدعاء دالة الظهور عند تحميل الصفحة للتأكد من ظهور العناصر المرئية
         window.addEventListener("load", reveal);
+
     </script>
+
 </body>
+
 </html>
