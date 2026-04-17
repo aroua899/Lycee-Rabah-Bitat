@@ -55,6 +55,10 @@
 
         footer { background: var(--primary); color: white; padding: 80px 10% 40px; text-align: center; clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
         .location-badge { color: var(--accent); font-weight: bold; font-size: 1.2em; margin-bottom: 20px; }
+        
+        /* تنسيق بسيط لرابط الخريطة */
+        .map-link { color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--accent); transition: 0.3s; }
+        .map-link:hover { color: var(--secondary); border-color: var(--secondary); }
     </style>
 </head>
 <body>
@@ -90,7 +94,9 @@
             <p class="description-text">
                 تتوسط <strong>ثانوية المجاهد رابح بيطاط</strong> مدينة أولاد يعيش الجميلة، كمنارةٍ علميةٍ شامخةٍ تستمدُّ عراقتها من اسمِ بطلٍ تاريخي، وجمالها من سحرِ ولايةِ البليدة. إن موقعها الاستراتيجي في قلبِ النسيجِ العمراني يجعلها قبلةً لكل طالبِ علمٍ يسعى للتميز. هنا، حيث يلتقي هدوءُ الطبيعةِ البليديةِ بحيويةِ العقلِ المبدع، ننسجُ خيوطَ المستقبلِ لجيلٍ يفتخرُ بانتمائهِ لهذا الصرحِ العظيم.
             </p>
-            <div class="location-badge">📍 الموقع: بلدية أولاد يعيش، ولاية البليدة - الجزائر.</div>
+            <div class="location-badge">
+                📍 الموقع: <a href="https://www.google.com/maps/place/Lyc%C3%A9e+Rabah+Bitate/@36.5078074,2.8612142,17z/data=!3m1!4b1!4m6!3m5!1s0x128f095dcbb1c7fb:0xf21fffe7db71bba2!8m2!3d36.5078031!4d2.8637891!16s%2Fg%2F12hks5_22?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">بلدية أولاد يعيش، ولاية البليدة - الجزائر (عرض على الخريطة)</a>
+            </div>
         </div>
     </section>
 
@@ -269,7 +275,7 @@
     <footer>
         <div class="location-badge" style="color: white; font-size: 1.5em;">ثانوية المجاهد رابح بيطاط | البليدة</div>
         <p style="font-size: 1.4em; color: var(--accent); font-weight: 900; margin-bottom: 20px;">بأقلامِ ورؤيةِ الطالبة: أروى بولغبار</p>
-        <p>&copy; جميع الحقوق محفوظة لعام 2026 - صُنع بحب لأجل العلم</p>
+        <p>© جميع الحقوق محفوظة لعام 2026 - صُنع بحب لأجل العلم</p>
     </footer>
 
     <script>
